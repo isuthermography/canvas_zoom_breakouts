@@ -1,17 +1,25 @@
 This tool lets you extract group assignments from canvas for use
 in preassigning Zoom breakout assignments.
 
+Please note that this tool is not endorsed or authorized by
+Canvas, Webex, or anyone else. 
+
+
+It assumes the user names registered into canvas map to
+email addresses registered to Webex via a simple suffix,
+e.g. "@iastate.edu".
 
 It is currently hardwired to work at Iowa State University.
 It uses ISU NetIDs as the common identifier between Canvas
 and Zoom. As such you should instruct students to log in
-to zoom via their ISU netid (using the "SSO" option and/or
-https://iastate.zoom.us)
+to zoom via their instituitional sign-on (using the "SSO"
+option)
 
 You will need to enable breakout rooms in your Zoom config.
-Login to https://iastate.zoom.us/ then select Profile...
-Settings... Breakout room. Also be sure to check the box
-"Allow host to assign participants to breakout rooms when scheduling"
+Login to your SSO site (e.g. https://iastate.zoom.us/) then
+select Profile... Settings... Breakout room. Also be sure to
+check the box "Allow host to assign participants to breakout
+rooms when scheduling"
 
 When scheduling the meeting check both the "Only authenticated users
 can join" and the "Breakout room pre-assign" checkboxes. Then

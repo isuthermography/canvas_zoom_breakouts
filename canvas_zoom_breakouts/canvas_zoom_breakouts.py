@@ -2,7 +2,7 @@ from canvasapi import Canvas
 
 from . import canvas_groups
 
-def canvas_zoom_breakouts(canvas,course_name,csvfile_name):
+def canvas_zoom_breakouts(canvas,email_suffix,course_name,csvfile_name):
     course = [c for c in canvas.get_courses() if c.name==course_name][0]
 
     (canvpart_by_netid,
@@ -18,7 +18,7 @@ def canvas_zoom_breakouts(canvas,course_name,csvfile_name):
     
     for group_name in groups_by_name:
         for participant_netid in groups_by_name[group_name].part_by_netid:
-            zoom_csvfile_lines.append("%s,%s@iastate.edu" % (group_name,participant_netid))
+            zoom_csvfile_lines.append("%s,%s%s" % (group_name,participant_netid,email_suffix))
             pass
         pass
     zoom_csvfile_string="\n".join(zoom_csvfile_lines)
