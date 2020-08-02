@@ -2,7 +2,7 @@ from canvasapi import Canvas
 
 from . import canvas_groups
 
-def canvas_zoom_breakouts(canvas,email_suffix,course_name,csvfile_name):
+def canvas_zoom_breakouts(canvas,email_suffix,course_name,group_category_name,csvfile_name):
     course = [c for c in canvas.get_courses() if c.name==course_name][0]
 
     (canvpart_by_netid,
@@ -11,7 +11,7 @@ def canvas_zoom_breakouts(canvas,email_suffix,course_name,csvfile_name):
     ) = canvas_groups.canvas_participants(canvas,course)
     
 
-    groups_by_name=canvas_groups.canvas_groups(canvas,course,canvpart_by_canvasid)
+    groups_by_name=canvas_groups.canvas_groups(canvas,course,group_category_name,canvpart_by_canvasid)
 
     zoom_csvfile_lines = []
     zoom_csvfile_lines.append("Pre-assign Room Name,Email Address")
